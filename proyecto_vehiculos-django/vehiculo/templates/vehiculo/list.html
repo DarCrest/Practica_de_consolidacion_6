@@ -1,0 +1,43 @@
+{% extends 'Vehiculo/base.html' %}
+
+{% block Bloque1 %}
+<H1>Listado de vehiculos</H1>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Serial Carroceria</th>
+            <th scope="col">Serial motor</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Condición de Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+{% for vehiculo in vehiculos %}
+        <tr>
+            <td>{{vehiculo.marca}}</td>
+            <td>{{vehiculo.modelo}}</td>
+            <td>{{vehiculo.serial_carroceria}}</td>
+            <td>{{vehiculo.serial_motor}}</td>
+            <td>{{vehiculo.categoria}}</td>
+            <td>{{vehiculo.precio}}</td>
+            <td>{% if vehiculo.precio <= 10000 %}Bajo 
+                {% elif vehiculo.precio <= 30000 %} Medio 
+                {% else %} Alto {% endif %} </td>
+        </tr>
+{% endfor %}
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+{% endblock Bloque1 %}

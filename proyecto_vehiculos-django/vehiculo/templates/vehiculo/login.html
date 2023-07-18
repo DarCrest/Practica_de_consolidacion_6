@@ -1,0 +1,15 @@
+{% extends 'vehiculo/base.html' %}
+
+{% block Bloque1 %}
+{% load crispy_forms_tags %}
+
+<div class='row mx-auto col-5 mt-3'>
+    <h1>Ingresar</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input  type="submit" value="Iniciar Sesión">
+    </form>
+    <p class='text-center'>¿No tienes una cuenta? <a class="nav-link active" aria-current="page" href="/register">Registrarse</a></p>
+</div>
+{% endblock Bloque1 %}
